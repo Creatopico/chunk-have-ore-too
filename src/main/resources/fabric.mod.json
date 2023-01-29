@@ -15,7 +15,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.example.modid.ExampleMod"
+      "ru.creatopico.ExampleMod"
     ]
   },
   "mixins": [

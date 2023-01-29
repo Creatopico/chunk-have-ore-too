@@ -1,13 +1,16 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.example.modid.mixin",
+  "package": "ru.creatopico.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+
+    "InWorldProcessingMixin"
   ],
   "client": [
-    "MinecraftMixin"
+    "ExampleMixin"
   ],
+  "server": [  ],
   "injectors": {
     "defaultRequire": 1
   }
