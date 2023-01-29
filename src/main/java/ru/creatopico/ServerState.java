@@ -15,9 +15,9 @@ import java.util.HashMap;
 
 public class ServerState extends PersistentState {
 
-	private final static String CHUNK_ORE_STORAGE_KEY = "chunk_ore_storage";
-	private final static String CHUNK_POS_X_KEY = "chunk_pos_x";
-	private final static String CHUNK_POS_Z_KEY = "chunk_pos_z";
+	public final static String CHUNK_ORE_STORAGE_KEY = "chunk_ore_storage";
+	public final static String CHUNK_POS_X_KEY = "chunk_pos_x";
+	public final static String CHUNK_POS_Z_KEY = "chunk_pos_z";
 
 	public static final HashMap<Vec2I, ChunkOreStorage> cacheOreStorage = new HashMap<>();
 	public static final HashMap<Vec2I, ChunkOreStorage> chunksStorages = new HashMap<>();
@@ -31,15 +31,13 @@ public class ServerState extends PersistentState {
 
     @Override
     public NbtCompound writeNbt(NbtCompound nbt) {
-        ExampleMod.LOGGER.info("Write nbt");
-        NbtCompound chunksStoragesNbt = new NbtCompound();
 
         chunksStorages.forEach((pos, storage) -> {
             NbtCompound chunkNbt = new NbtCompound();
             chunkNbt.putInt("ore_left", storage.oreLeft);
             chunkNbt.putInt(CHUNK_POS_X_KEY, pos.x);
             chunkNbt.putInt(CHUNK_POS_Z_KEY, pos.z);
-            chunksStoragesNbt.put("chunk_" + pos.x + "_" + pos.z, chunkNbt);
+			nbt.put("chunk_" + pos.x + "_" + pos.z, chunkNbt);
         });
 
         cacheOreStorage.forEach((pos, storage) -> {
@@ -47,10 +45,9 @@ public class ServerState extends PersistentState {
             chunkNbt.putInt("ore_left", storage.oreLeft);
             chunkNbt.putInt(CHUNK_POS_X_KEY, pos.x);
             chunkNbt.putInt(CHUNK_POS_Z_KEY, pos.z);
-            chunksStoragesNbt.put("chunk_" + pos.x + "_" + pos.z, chunkNbt);
+			nbt.put("chunk_" + pos.x + "_" + pos.z, chunkNbt);
         });
 
-        nbt.put(CHUNK_ORE_STORAGE_KEY, chunksStoragesNbt);
         return nbt;
     }
 
