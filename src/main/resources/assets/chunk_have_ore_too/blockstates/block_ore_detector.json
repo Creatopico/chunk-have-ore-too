@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "chunk_have_ore_too:block/block_ore_detector" }
+  }
+}

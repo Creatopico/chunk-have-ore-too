@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "chunk_have_ore_too",
   "version": "${version}",
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Chunk Have Ore Too",
+  "description": "Chunk ore system for creatopico server",
   "authors": [
-    "Me!"
+    "LittleLigr"
   ],
   "contact": {
-    "sources": "https://github.com/Fabricators-of-Create/create-fabric-addon-template"
+    "sources": "https://github.com/Creatopico/chunk-have-ore-too"
   },
   "license": "CC0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/chunk_have_ore_too/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "ru.creatopico.ExampleMod"
+      "ru.creatopico.ChunkHaveOreToo"
     ]
   },
   "mixins": [

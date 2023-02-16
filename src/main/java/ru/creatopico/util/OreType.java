@@ -1,10 +1,10 @@
-package ru.creatopico;
+package ru.creatopico.util;
 
 public enum OreType {
 	iron("item.minecraft.iron_nugget"),
 	gold("item.minecraft.gold_nugget");
 
-	public String ore;
+	public final String ore;
 
 	OreType(String ore) {
 		this.ore = ore;

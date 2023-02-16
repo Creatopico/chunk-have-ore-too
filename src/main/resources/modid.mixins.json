@@ -4,11 +4,10 @@
   "package": "ru.creatopico.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-
-    "InWorldProcessingMixin"
+    "InWorldProcessingMixin",
+    "AirCurrentMixin"
   ],
   "client": [
-    "ExampleMixin"
   ],
   "server": [  ],
   "injectors": {
